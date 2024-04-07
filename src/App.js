@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import { Button, TextField } from "@mui/material"
+import Paper from "@mui/material/Paper"
+import TODO from "./components/todo/TODO"
 
 function App() {
+  const list  = [1, 2]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>ToDo List</h1>
+      <Paper sx={{padding: "1rem", display:"flex", alignItems:"center", marginBottom:"20px"}} elevation = {8}>
+        <TextField sx={{margin: "20px"}} id="outlined-basic" label="Им'я справи" variant="outlined" />
+        <Button variant="contained">Нова справа</Button>
+      </Paper>
+      {list.map(el => {
+        return(<TODO/>)
+      })}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
